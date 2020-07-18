@@ -84,7 +84,7 @@ namespace PsyCurio
 
                 GameObject temp = Instantiate(_prefabShopElement, _elementHolder.transform);
                 temp.GetComponent<UIShopElement>()
-                    .SetValues(_counter.itemSlots[index].gameObject.GetComponent<Item>()._itemData);
+                    .SetValues(_counter.itemSlots[index].gameObject.GetComponent<Item>());
             }
         }
         
@@ -110,7 +110,7 @@ namespace PsyCurio
             
             foreach (Transform current in _elementHolder.transform)
             {
-                sum += current.GetComponent<UIShopElement>()._itemData.price;
+                sum += current.GetComponent<UIShopElement>()._item._itemData.price;
             }
             
             _buyButton.UpdateState(sum);
