@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1452741173607981106, guid: ec8312d30c55545b5a0127856ba2ed6a,
         type: 3}
       propertyPath: _itemData.name
-      value: Expensive Water
+      value: Premium water
       objectReference: {fileID: 0}
     - target: {fileID: 1452741173607981106, guid: ec8312d30c55545b5a0127856ba2ed6a,
         type: 3}

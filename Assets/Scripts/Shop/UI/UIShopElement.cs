@@ -1,4 +1,5 @@
 ﻿using System;
+using PsyCurio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +10,13 @@ public class UIShopElement : MonoBehaviour
    [SerializeField] private TextMeshProUGUI _priceTxt;
    [SerializeField] private TextMeshProUGUI _nameTxt;
    [SerializeField] private Image _image;
-
-   public void SetValues(ItemData _itemData)
+   public ItemData _itemData;
+   
+   public void SetValues(ItemData _itemDataIncoming)
    {
-       _nameTxt.text = _itemData.name;
-       _priceTxt.text = _itemData.price.ToString();
-       _image.color = _itemData.color;
-
+       _itemData = _itemDataIncoming;
+       _nameTxt.text = _itemDataIncoming.name;
+       _priceTxt.text = "$" + _itemDataIncoming.price;
+       _image.color = _itemDataIncoming.color;
    }
 }
