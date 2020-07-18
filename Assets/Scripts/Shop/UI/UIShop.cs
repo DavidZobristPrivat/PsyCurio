@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 
 namespace PsyCurio
@@ -6,6 +8,7 @@ namespace PsyCurio
    
 public class UIShop : MonoBehaviour
 {
+    #pragma  warning disable CS0649
     [SerializeField] private GameObject _prefabShopElement;
     [SerializeField] private GameObject _elementHolder;
     private Counter _counter;
@@ -35,6 +38,8 @@ public class UIShop : MonoBehaviour
         {
             return;}
         
+        SetList();
+        
       if(!subbed)
       {
           subbed = true;  _counter.onListChanged += SetList;}
@@ -57,7 +62,16 @@ public class UIShop : MonoBehaviour
 
     private void Populate()
     {
-       
+        
+        foreach (GameObject current in _counter.itemSlots)
+        {
+            if (current == null)
+            {
+                continue;}
+            
+            GameObject temp = Instantiate(_prefabShopElement, _elementHolder.transform);
+            temp.GetComponent<UIShopElement>().SetValues(current.gameObject.GetComponent<Item>()._itemData);
+        }
     }
 
 
@@ -66,6 +80,8 @@ public class UIShop : MonoBehaviour
         Clean();
         Populate();
     }
+
+
  
 }    
 }

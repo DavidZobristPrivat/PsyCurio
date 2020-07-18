@@ -61,6 +61,10 @@ MonoBehaviour:
   renderer: {fileID: 8752664809696603646}
   highlightMaterial: {fileID: 2100000, guid: c8508cd6311d64c1b9cd88881631e753, type: 2}
   isOnCounter: 0
+  _itemData:
+    name: Parent
+    price: 1
+    color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8376251540157538953
 GameObject:
   m_ObjectHideFlags: 0
