@@ -4,18 +4,18 @@ namespace PsyCurio
 {
     public class Item : MonoBehaviour, IMouseOver
     {
-        #pragma warning disable CS0649,CS0108 // Disable warnings that appear with SerializeField
-        
+#pragma warning disable CS0649,CS0108 // Disable warnings that appear with SerializeField
+
         [SerializeField] private Renderer renderer;
         [SerializeField] private Material highlightMaterial;
-     
-        
+
+
         private Material defaultMaterial;
         private Counter _counter;
-        
+
         public bool isOnCounter;
-      
-        
+
+
         private void Awake()
         {
             defaultMaterial = renderer.material;
@@ -26,20 +26,18 @@ namespace PsyCurio
         {
             // No null check better to get / see the reference error
             renderer.material = this.highlightMaterial;
-     
         }
 
 
         public void OnDeselect()
         {
             renderer.material = this.defaultMaterial;
-        
         }
 
         public void OnClick()
         {
-          //  Debug.Log("Clicked");
-            
+            //  Debug.Log("Clicked");
+
             if (_counter == null)
             {
                 Debug.LogWarning("Be sure to add a Counter to the world first");
@@ -48,16 +46,13 @@ namespace PsyCurio
 
             if (!isOnCounter)
             {
-               OnDeselect();
+                OnDeselect();
                 _counter.TryAddItem(gameObject);
             }
             else
             {
-          
-                Destroy(gameObject);
+                _counter.RemoveItem(gameObject);
             }
-          
         }
-        
     }
 }
