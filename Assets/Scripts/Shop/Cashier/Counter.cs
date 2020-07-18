@@ -16,7 +16,7 @@ namespace PsyCurio
           if (spawnedItems.childCount < maximumItems)
           {
               
-              GameObject tempGameObject = Instantiate(_itemToAdd.prefab,spawnedItems);
+              GameObject tempGameObject = Instantiate(_itemToAdd.gameObject,spawnedItems);
              
               
               Item tempItem = tempGameObject.GetComponent<Item>();

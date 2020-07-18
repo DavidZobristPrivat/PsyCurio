@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1941793087056890718}
   - component: {fileID: 7196427652893746556}
   - component: {fileID: 3662687679771735274}
+  - component: {fileID: 7842534256316218430}
   m_Layer: 0
   m_Name: NPC_Cashier
   m_TagString: selectable
@@ -72,6 +73,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.8360322, z: 1}
   m_Center: {x: 0, y: 0.91198397, z: 0}
+--- !u!114 &7842534256316218430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277177497672585700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2528a312170e949e0a8a7daeb0b2c992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5329346592656751616
 GameObject:
   m_ObjectHideFlags: 0

@@ -221,6 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5870838526583704705}
+  - component: {fileID: 356453905870624521}
   m_Layer: 0
   m_Name: ShopCorner
   m_TagString: Untagged
@@ -246,6 +247,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356453905870624521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870838526583704704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7f99fb263254d899948caf3915d9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumItems: 5
+  distanceBetweenObject: 1.4
+  spawnedItems: {fileID: 8455491685052118251}
 --- !u!1001 &5870838525929995955
 PrefabInstance:
   m_ObjectHideFlags: 0

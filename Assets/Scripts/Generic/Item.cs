@@ -14,7 +14,7 @@ namespace PsyCurio
         private Counter _counter;
         
         public bool isOnCounter;
-        public GameObject prefab;
+      
         
         private void Awake()
         {
