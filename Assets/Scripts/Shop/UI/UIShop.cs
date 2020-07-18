@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace PsyCurio
 {
@@ -62,16 +63,29 @@ public class UIShop : MonoBehaviour
 
     private void Populate()
     {
-        
-        foreach (GameObject current in _counter.itemSlots)
+
+        if (_counter.itemSlots.Count == 0)
         {
-            if (current == null)
+            return;}
+        
+        for (int index = _counter.itemSlots.Count-1; index >= 0; --index) // has to loop from back to front to mirror the position the items on the table.
+        {
+           // Debug.Log("index " + index);
+           
+            if (_counter.itemSlots[index] == null)
             {
-                continue;}
+                continue;
+            }
             
             GameObject temp = Instantiate(_prefabShopElement, _elementHolder.transform);
-            temp.GetComponent<UIShopElement>().SetValues(current.gameObject.GetComponent<Item>()._itemData);
+            temp.GetComponent<UIShopElement>().SetValues(_counter.itemSlots[index].gameObject.GetComponent<Item>()._itemData);
         }
+            
+   
+          
+            
+            
+
     }
 
 
