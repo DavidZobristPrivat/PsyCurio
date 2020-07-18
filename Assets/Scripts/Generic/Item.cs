@@ -38,7 +38,7 @@ namespace PsyCurio
 
         public void OnClick()
         {
-            Debug.Log("Clicked");
+          //  Debug.Log("Clicked");
             
             if (_counter == null)
             {
@@ -49,7 +49,7 @@ namespace PsyCurio
             if (!isOnCounter)
             {
                OnDeselect();
-                _counter.TryAddItem(this);
+                _counter.TryAddItem(gameObject);
             }
             else
             {
