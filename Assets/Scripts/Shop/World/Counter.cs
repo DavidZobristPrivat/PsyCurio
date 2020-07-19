@@ -26,6 +26,8 @@ namespace PsyCurio
 
         public void TryAddItem(GameObject _itemToAdd)
         {
+            // There could be effects or a tween here, prevent interaction until this finished
+            
             int index = itemSlots.FindIndex(slotIsEmpty => slotIsEmpty == null);
             //Debug.Log("index " + index);
 
@@ -47,8 +49,8 @@ namespace PsyCurio
 
         public void RemoveItem(GameObject _itemToRemove)
         {
+            // There could be effects or a tween here, prevent interaction until this finished
             DestroyImmediate(_itemToRemove);
-            
             onListChanged?.Invoke();
         }
 
