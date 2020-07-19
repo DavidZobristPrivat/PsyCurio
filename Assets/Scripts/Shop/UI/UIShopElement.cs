@@ -46,20 +46,20 @@ namespace PsyCurio
         {
            // Debug.Log("select");
             _selectedTween.Kill(false);
-
             _selectedTween = _item.transform.DOMoveY(_startY+1.2f, 0.4f, false).SetEase(Ease.Unset);
         }
         
         public void onDeselect()
         {
-            
             _selectedTween.Kill(false);
             _selectedTween = _item.transform.DOMoveY(_startY, 0.5f, false).SetEase(Ease.OutBounce);
         }
 
-        private void OnDestroy()
+        public void DestroyProperly()
         {
             _selectedTween.Kill(false);
+            _selectedTween = null;
+            Destroy(gameObject);
         }
     }
 }
