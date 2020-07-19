@@ -2915,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 356453905870624521, guid: 835139173c16a416c83385a31907b236,
         type: 3}
       propertyPath: onListFull.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 356453905870624521, guid: 835139173c16a416c83385a31907b236,
         type: 3}
@@ -2940,7 +2940,7 @@ PrefabInstance:
     - target: {fileID: 356453905870624521, guid: 835139173c16a416c83385a31907b236,
         type: 3}
       propertyPath: onListFull.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: That's enough! Click on the cash register.
+      value: xxxxx
       objectReference: {fileID: 0}
     - target: {fileID: 4695576369684640928, guid: 835139173c16a416c83385a31907b236,
         type: 3}

@@ -14,7 +14,7 @@ namespace PsyCurio
         [SerializeField] private Transform spawnedItems;
         public List<GameObject> itemSlots = new List<GameObject>();
         public UnityAction onListChanged;
-        public UnityEvent onListFull;
+        public StringUnityEvent onListFull;
         
         private void Awake()
         {
@@ -33,7 +33,17 @@ namespace PsyCurio
 
             if (index == -1)
             {
-                onListFull?.Invoke();
+                UIShop _uiShop = FindObjectOfType<UIShop>();
+                
+                if (_uiShop != null && _uiShop.gameObject.activeSelf)
+                {
+                    onListFull?.Invoke("Buy now or remove an item out of your list.");
+                }
+                else
+                {
+                    onListFull?.Invoke("That's enough! Click on the cash register.");
+                }
+
                 return;
             }
 
