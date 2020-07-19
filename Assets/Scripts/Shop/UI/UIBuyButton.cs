@@ -6,7 +6,12 @@ public class UIBuyButton : MonoBehaviour
 {
 #pragma warning disable CS0649
     [SerializeField] private TextMeshProUGUI _buyButtonPriceTxt;
-    public UIShop _uiShop;
+    private UIShop _uiShop;
+
+    public void Initialize(UIShop _uiShopSent)
+    {
+        _uiShop = _uiShopSent;
+    }
     
     public void UpdateState(int totalPrice)
     {
@@ -22,7 +27,14 @@ public class UIBuyButton : MonoBehaviour
 
     public void BuyClick()
     {
-        //..
-      
+        //..if interactable (enough currency)
+        
+        foreach (GameObject current in _uiShop._counter.itemSlots)
+        {
+            // Subtract total price 
+            // Add items to inventory
+            _uiShop._counter.RemoveItem(current);
+        }
+        _uiShop.ToggleOnOff();
     }
 }

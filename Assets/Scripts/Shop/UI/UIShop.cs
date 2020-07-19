@@ -17,7 +17,7 @@ namespace PsyCurio
         {
             gameObject.SetActive(false);
             _counter = FindObjectOfType<Counter>();
-            _buyButton._uiShop = this;
+            _buyButton.Initialize(this);
         }
 
         public void ToggleOnOff()
