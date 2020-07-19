@@ -7,23 +7,29 @@ namespace PsyCurio
     public class NPC_Cashier : MonoBehaviour, IMouseOver // Probably would inherit from a parent class NPC
     {
         private Animator _animator;
+#pragma warning disable CS0649
+        [SerializeField] private QuickOutline _quickOutline;
         
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _quickOutline.OutlineWidth = 0f;
+
         }
         
         public void OnSelect()
         {
             // Add some nice effect
-        
-            transform.localScale= new Vector3(4.75f,4.75f,4.75f);
+            _quickOutline.OutlineWidth = 3.5f;
+            _quickOutline.enabled = true;
+
         }
 
         public void OnDeselect()
         {
             // Add some nice effect
-            transform.localScale= new Vector3(4.7f,4.7f,4.7f);
+            _quickOutline.enabled = false;
+           
         }
 
         public void OnClick()

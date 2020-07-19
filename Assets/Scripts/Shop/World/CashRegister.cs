@@ -6,15 +6,24 @@ public class CashRegister : MonoBehaviour,IMouseOver
 {
 #pragma warning disable CS0649
     [SerializeField] private UnityEvent onClick;
+    [SerializeField] private QuickOutline _quickOutline;
+
+    private void Awake()
+    {
+        _quickOutline.OutlineWidth = 0f;
+    }
     
     public void OnSelect()
     {
-        transform.localScale= new Vector3(1.03f,1.03f,1.03f);
+        _quickOutline.enabled = true;
+        _quickOutline.OutlineWidth = 4.1f;
     }
 
     public void OnDeselect()
     {
-        transform.localScale = Vector3.one;
+        _quickOutline.enabled = false;
+   
+  
     }
 
     public void OnClick()

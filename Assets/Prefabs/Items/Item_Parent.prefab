@@ -58,8 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beca7a59f2160433cbb4377e69e4d45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 8752664809696603646}
-  highlightMaterial: {fileID: 2100000, guid: c8508cd6311d64c1b9cd88881631e753, type: 2}
+  _renderer: {fileID: 8752664809696603646}
+  _quickOutline: {fileID: 5453162179608560295}
   isOnCounter: 0
   _itemData:
     name: Parent
@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 8942590682667100508}
   - component: {fileID: 1426835139156293349}
   - component: {fileID: 8752664809696603646}
+  - component: {fileID: 5453162179608560295}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -142,3 +143,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5453162179608560295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376251540157538953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

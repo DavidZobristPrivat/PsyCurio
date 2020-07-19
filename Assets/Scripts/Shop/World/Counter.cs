@@ -36,11 +36,9 @@ namespace PsyCurio
             }
 
             GameObject tempGameObject = Instantiate(_itemToAdd.gameObject, spawnedItems);
-
+            
             Item tempItem = tempGameObject.GetComponent<Item>();
-                tempItem.isOnCounter = true;
-                tempGameObject.transform.localPosition = new Vector3(0, 0, (distanceBetweenObject * index));
-                tempGameObject.transform.localScale = Vector3.one;
+           tempItem.InitCountObject(distanceBetweenObject,index);
                 
             itemSlots[index] = tempGameObject;
             

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7196427652893746556}
   - component: {fileID: 3662687679771735274}
   - component: {fileID: 7842534256316218430}
+  - component: {fileID: 6799139255323537909}
   m_Layer: 0
   m_Name: NPC_Cashier
   m_TagString: selectable
@@ -85,6 +86,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2528a312170e949e0a8a7daeb0b2c992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quickOutline: {fileID: 6799139255323537909}
+--- !u!114 &6799139255323537909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277177497672585700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5329346592656751616
 GameObject:
   m_ObjectHideFlags: 0

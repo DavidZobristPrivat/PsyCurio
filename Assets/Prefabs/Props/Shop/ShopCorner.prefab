@@ -262,6 +262,10 @@ MonoBehaviour:
   maximumItems: 5
   distanceBetweenObject: 1.4
   spawnedItems: {fileID: 8455491685052118251}
+  itemSlots: []
+  onListFull:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &765229672010447141
 PrefabInstance:
   m_ObjectHideFlags: 0
