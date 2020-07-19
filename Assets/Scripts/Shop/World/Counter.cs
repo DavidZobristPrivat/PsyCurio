@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 namespace PsyCurio
 {
+
     public class Counter : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -13,6 +14,7 @@ namespace PsyCurio
         [SerializeField] private Transform spawnedItems;
         public List<GameObject> itemSlots = new List<GameObject>();
         public UnityAction onListChanged;
+        public UnityEvent onListFull;
         
         private void Awake()
         {
@@ -29,7 +31,7 @@ namespace PsyCurio
 
             if (index == -1)
             {
-                Debug.Log("Counter is full. Remove an item first.");
+                onListFull?.Invoke();
                 return;
             }
 

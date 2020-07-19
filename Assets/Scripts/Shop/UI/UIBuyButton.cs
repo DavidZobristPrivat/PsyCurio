@@ -1,11 +1,13 @@
-﻿using TMPro;
+﻿using PsyCurio;
+using TMPro;
 using UnityEngine;
 
 public class UIBuyButton : MonoBehaviour
 {
 #pragma warning disable CS0649
     [SerializeField] private TextMeshProUGUI _buyButtonPriceTxt;
-
+    public UIShop _uiShop;
+    
     public void UpdateState(int totalPrice)
     {
         _buyButtonPriceTxt.text = "$" + totalPrice;
@@ -21,5 +23,6 @@ public class UIBuyButton : MonoBehaviour
     public void BuyClick()
     {
         //..
+      
     }
 }

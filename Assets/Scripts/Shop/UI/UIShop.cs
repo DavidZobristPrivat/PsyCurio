@@ -10,13 +10,14 @@ namespace PsyCurio
         [SerializeField] private GameObject _prefabShopElement;
         [SerializeField] private GameObject _elementHolder;
         [SerializeField] private UIBuyButton _buyButton;
-        private Counter _counter;
+        public Counter _counter;
         private bool subbed;
 
         private void Awake()
         {
             gameObject.SetActive(false);
             _counter = FindObjectOfType<Counter>();
+            _buyButton._uiShop = this;
         }
 
         public void ToggleOnOff()
