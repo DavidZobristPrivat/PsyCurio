@@ -84,5 +84,8 @@ namespace PsyCurio
                 _counter.RemoveItem(gameObject);
             }
         }
+        
+        
+        
     }
 }

@@ -41,7 +41,7 @@ namespace PsyCurio
 
         public void onSelect()
         {
-           _item._ItemTweener.CounterMoveUp();
+            _item._ItemTweener.CounterMoveUp();
         }
         
         public void onDeselect()
@@ -51,7 +51,6 @@ namespace PsyCurio
 
         public void DestroyProperly()
         {
-
             Destroy(gameObject);
         }
     }
