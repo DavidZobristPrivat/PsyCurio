@@ -14,7 +14,8 @@ namespace PsyCurio
         [SerializeField] private Renderer _renderer;
         [SerializeField] private QuickOutline _quickOutline;
         private Counter _counter;
-
+        public itemTweener _ItemTweener = new itemTweener();
+        public Vector3 CounterPosition;
         public bool isOnCounter;
 
         public ItemData _itemData; // in a bigger game they could be scriptable objects that are loaded by id
@@ -24,15 +25,18 @@ namespace PsyCurio
             _itemData.color = _renderer.material.color; // instead of an image for this test task, I pass the color to the ui version for representation
             _counter = FindObjectOfType<Counter>();
             _quickOutline.OutlineWidth = 0f;
+            _ItemTweener.Init(this);
         }
 
         public void InitCountObject(float distance, int index)
         {
             isOnCounter = true;
-            transform.localPosition = new Vector3(0, 0, (distance * index));
             transform.localScale = Vector3.one;
-            // Debug.Log("Counter oject init");
+            
+            CounterPosition = new Vector3(0, 0, (distance * index));
 
+            _ItemTweener.MoveToCounter();
+            
             Destroy(_quickOutline);
             _quickOutline = gameObject.AddComponent<QuickOutline>();
             _quickOutline.OutlineWidth = 0f;

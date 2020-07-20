@@ -61,7 +61,7 @@ namespace PsyCurio
         {
             foreach (Transform child in _elementHolder.transform)
             {
-                child.transform.GetComponent<UIShopElement>().DestroyProperly();
+               child.gameObject.GetComponent<UIShopElement>().DestroyProperly();
             }
         }
 

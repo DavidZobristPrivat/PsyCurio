@@ -43,7 +43,7 @@ namespace PsyCurio
                 {
                     onListFull?.Invoke("That's enough! Click on the cash register.");
                 }
-
+                
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace PsyCurio
             
             Item tempItem = tempGameObject.GetComponent<Item>();
            tempItem.InitCountObject(distanceBetweenObject,index);
-                
+           tempItem.transform.position = _itemToAdd.transform.position;
             itemSlots[index] = tempGameObject;
             
             onListChanged?.Invoke();

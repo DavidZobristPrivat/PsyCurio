@@ -14,8 +14,6 @@ namespace PsyCurio
         [SerializeField] private Image _image;
         [HideInInspector] public Item _item;
         private Counter _counter;
-        private Tween _selectedTween;
-        private float _startY;
         
         void Awake()
         {
@@ -25,7 +23,6 @@ namespace PsyCurio
         public void SetValues(Item _incomingItem)
         {
             _item = _incomingItem;
-            _startY = _item.transform.position.y;
             _nameTxt.text = _item._itemData.name;
             _priceTxt.text = "$" + _item._itemData.price;
             _image.color = _item._itemData.color;
@@ -44,21 +41,17 @@ namespace PsyCurio
 
         public void onSelect()
         {
-           // Debug.Log("select");
-            _selectedTween.Kill(false);
-            _selectedTween = _item.transform.DOMoveY(_startY+1.2f, 0.4f, false).SetEase(Ease.Unset);
+           _item._ItemTweener.CounterMoveUp();
         }
         
         public void onDeselect()
         {
-            _selectedTween.Kill(false);
-            _selectedTween = _item.transform.DOMoveY(_startY, 0.5f, false).SetEase(Ease.OutBounce);
+            _item._ItemTweener.CounterMoveDown();
         }
 
         public void DestroyProperly()
         {
-            _selectedTween.Kill(false);
-            _selectedTween = null;
+
             Destroy(gameObject);
         }
     }
