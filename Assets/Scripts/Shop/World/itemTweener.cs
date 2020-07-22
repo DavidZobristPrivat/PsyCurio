@@ -36,7 +36,7 @@ public class itemTweener
         _MoveToCounterY.Kill(false);
         _MoveToCounterZ.Kill(false);
       
-        _selectedTween = _item.transform.DOLocalMoveY(_item.CounterPosition.y+1.2f, 0.4f, false).SetEase(Ease.Unset); 
+      _selectedTween = _item.transform.DOLocalMove(new Vector3(_item.CounterPosition.x,_item.CounterPosition.y+1.2f,_item.CounterPosition.z), 0.4f, false).SetEase(Ease.Unset); 
     }
     
     public void CounterMoveDown()
@@ -47,7 +47,7 @@ public class itemTweener
         _MoveToCounterZ.Kill(false);
         _selectedTween.Kill(false);
       
-        _selectedTween = _item.transform.DOLocalMoveY(_item.CounterPosition.y, 0.5f, false).SetEase(Ease.OutBounce);
+        _selectedTween = _item.transform.DOLocalMove(_item.CounterPosition, 0.5f, false).SetEase(Ease.OutBounce);
     }
 
     public void MoveToCounter()
@@ -63,6 +63,7 @@ public class itemTweener
     {
         DOTween.Kill(this);
     }
-    
+
+  
 }
 }
